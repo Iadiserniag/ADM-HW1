@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
 #------------------------------------------------------------------------
 
-# Number Line Jumps
+# Number Line Jumps (kangaroo)
 # https://www.hackerrank.com/challenges/kangaroo
 
 import math
@@ -161,7 +161,7 @@ if __name__ == '__main__':
 
 #-------------------------------------------------------------------------
 
-# Insertion1
+# Insertion sort 1
 # https://www.hackerrank.com/challenges/insertionsort1
 
 
@@ -229,8 +229,6 @@ if __name__ == '__main__':
     insertionSort2(n, arr)
 
 
-
-
 #------------------------------------------------------------------------
 
 
@@ -269,4 +267,3 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
-
