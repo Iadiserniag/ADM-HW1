@@ -6,7 +6,7 @@
 
 Both files are structured in the following way:
 
-<pre><code>#SECTION (i.e. Strings)
+<pre><code>#SECTION (for instance, "Strings")
 
 #Exercise name
 #Additional comments
