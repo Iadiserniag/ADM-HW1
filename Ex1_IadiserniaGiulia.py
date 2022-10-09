@@ -933,8 +933,6 @@ else:
 
 # COLLECTIONS
 
-# Collections
-
 
 # Counter
 # https://www.hackerrank.com/challenges/collections-counter
@@ -1204,8 +1202,6 @@ for _ in range(T):
 
 
 # BUILT-INS
-
-# # BUILT-INS
 
 # 1) Zipped!
 # https://www.hackerrank.com/challenges/zipped
@@ -1599,8 +1595,8 @@ else:
 
 #---------------------------------------------------------------------------
 
-# I looked at the Hackerrank Discussion section for this excercise and I tried to understand the solution
 # Validating Roman Numerals
+# I looked at the Hackerrank Discussion section for this excercise and I tried to understand the solution
 # https://www.hackerrank.com/challenges/validate-a-roman-number
 
 
@@ -1620,6 +1616,8 @@ print(str(bool(re.match(regex_pattern, input()))))
 
 #------------------------------------------------------------------------
 
+# Validating Postal codes
+# https://www.hackerrank.com/challenges/validating-postalcode
 
 regex_integer_in_range = r"[1-9][0-9][0-9][0-9][0-9][0-9]$"
 
@@ -1783,32 +1781,9 @@ if __name__ == '__main__':
     tree = etree.ElementTree(etree.fromstring(xml))
     depth(tree.getroot(), -1)
     print(maxdepth)
-
-#------------------------------------------------------------------------
-
-# XML 1
-# https://www.hackerrank.com/challenges/xml-1-find-the-score
-
-
-import sys
-import xml.etree.ElementTree as etree
-
-def get_attr_number(node):
-    out = 0
-    for el in node.iter():
-        out += len(el.keys())
-    return out
-
-    
-if __name__ == '__main__':
-    sys.stdin.readline()
-    xml = sys.stdin.read()
-    tree = etree.ElementTree(etree.fromstring(xml))
-    root = tree.getroot()
-    print(get_attr_number(root))
-    
     
 #------------------------------------------------------------------------
+
 
 # NUMPY
 
@@ -2029,6 +2004,7 @@ print(round(numpy.std(arr, axis = None), 11))
 
 
 #----------------------------------------------------------------------
+
 
 # Dot and Cross product
 # https://www.hackerrank.com/challenges/np-dot-and-cross
