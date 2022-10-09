@@ -118,8 +118,6 @@ if __name__ == '__main__':
 
 # BASIC DATA TYPES
 
-# Basic Data Types
-
 # List comprehensions
 # https://www.hackerrank.com/challenges/list-comprehensions
 
