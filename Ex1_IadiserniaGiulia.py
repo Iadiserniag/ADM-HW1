@@ -118,119 +118,137 @@ if __name__ == '__main__':
 
 # BASIC DATA TYPES
 
+# Basic Data Types
 
-# Hello World
-# https://www.hackerrank.com/challenges/py-hello-world
-
-print("Hello, World!")
-
-
-#-------------------------------------------------------------------------
-
-# If else
-# https://www.hackerrank.com/challenges/py-if-else
-
-import math
-import os
-import random
-import re
-import sys
-
+# List comprehensions
+# https://www.hackerrank.com/challenges/list-comprehensions
 
 
 if __name__ == '__main__':
-    n = int(input().strip())
-if n%2 == 0:
-    if n in range(2, 6):
-        print("Not Weird")
-    elif n in range(6, 21):
-        print("Weird")
-    elif n > 20:
-        print("Not Weird")
-else:
-    print("Weird")  
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    i = 0
+    j = 0
+    k = 0
+    l = []
+    
+    for i in range(0, x+1):
+        for j in range(0, y+1):
+            for k in range(0, z+1):
+                l.append([i, j, k])
+    
+    lnew = []
+    for el in l:
+        if sum(el) != n:
+            lnew.append(el)
+    
+    print(lnew)
 
 
-#------------------------------------------------------------------------
+#---------------------------------------------------------------------
 
 
-# Arithmetic operators
-# https://www.hackerrank.com/challenges/python-arithmetic-operators
-
-
-if __name__ == '__main__':
-    a = int(input())
-    b = int(input())
-print(a+b)
-print(a-b)
-print(a*b)
-
-
-#------------------------------------------------------------------------
-
-
-# Division
-# https://www.hackerrank.com/challenges/python-division
-
-
-if __name__ == '__main__':
-    a = int(input())
-    b = int(input())
-print(a//b)
-print(a/b)
-
-
-#-----------------------------------------------------------------------
-
-
-# Loops
-# https://www.hackerrank.com/challenges/python-loops
+# Find the runner up score
+# https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list
 
 
 if __name__ == '__main__':
     n = int(input())
-i = 0
-while i < n:
-    print(i**2)
-    i += 1
+    arr = map(int, input().split())
+    l = [el for el in arr]
+    lnew = []
+    for x in l:
+        if x not in lnew:
+            lnew.append(x)
+    lnew.sort(reverse=True)
+    print(lnew[1])
 
 
-#-----------------------------------------------------------------------
+#----------------------------------------------------------------------
 
 
-# Write a function
-# https://www.hackerrank.com/challenges/write-a-function
-
-
-def is_leap(year):
-    leap = False
-    if year%4 == 0:
-        if year%100 == 0:
-            if year%400 == 0:
-                leap = True
-        else:
-            leap = True
-        
-    return leap
-
-year = int(input())
-print(is_leap(year))
-
-
-#-----------------------------------------------------------------------
-
-# print function
-# https://www.hackerrank.com/challenges/python-print
+# Nested lists
+# https://www.hackerrank.com/challenges/nested-list
 
 
 if __name__ == '__main__':
-    n = int(input())
-    i = 1
-    out = ""
-    while i < n + 1:
-        out += str(i)
+    records = []; scores = []; names = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        record = []
+        record.append(name); record.append(score)
+        names.append(name); scores.append(score)
+        records.append(record)
+    scores.sort()
+    scores_new = []
+    for el in scores:
+        if el not in scores_new:
+            scores_new.append(el)
+    i = 0
+    names_new = []
+    while i < len(records):
+        if records[i][1] == scores_new[1]:
+            names_new.append(records[i][0])
         i += 1
-    print(out)
+    names_new.sort()
+    [print(el) for el in names_new]
+
+
+#---------------------------------------------------------------------
+
+
+# Finding the percentage
+# https://www.hackerrank.com/challenges/finding-the-percentage
+
+
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    sum = 0
+    for n in student_marks:
+        if n == query_name:
+            for num in student_marks[n]:
+                sum += num
+    avg = sum/len(student_marks[query_name])
+    form_avg = "{:.2f}".format(avg)
+    print(form_avg)
+
+
+#---------------------------------------------------------------------
+
+
+# Lists
+# https://www.hackerrank.com/challenges/python-lists
+
+
+if __name__ == '__main__':
+    N = int(input())
+    arr = map(input().split())
+    for el in arr:
+        print(el)
+
+
+#---------------------------------------------------------------------
+
+# Tuples
+# https://www.hackerrank.com/challenges/python-tuples
+
+
+if __name__ == '__main__':
+    n = int(input())
+    integer_list = map(int, input().split())
+    t = ()
+    for el in integer_list:
+        t += (el,)
+    print(hash(t))
 
 #---------------------------------------------------------------------
 
@@ -1123,7 +1141,6 @@ for el in b:
 
 # DATE&TIME
 
-
 # Time and Date
 
 # Calendar Module
@@ -1299,8 +1316,6 @@ if __name__ == '__main__':
 
 
 #-----------------------------------------------------------------------
-
-
 
 # REGEX & PARSING
 
@@ -1793,39 +1808,8 @@ if __name__ == '__main__':
     tree = etree.ElementTree(etree.fromstring(xml))
     root = tree.getroot()
     print(get_attr_number(root))
-
-
-#--------------------------------------------------------------
-
-
-# XML2
-# https://www.hackerrank.com/challenges/xml2-find-the-maximum-depth
-
-
-import xml.etree.ElementTree as etree
-
-# ElementTree represents the whole XML document as a tree, and Element represents a single node in this tree.
-
-maxdepth = 0
-def depth(elem, level):
-    global maxdepth
-
-    if level == maxdepth:
-        maxdepth += 1
-
-    for child in elem: # child --> go to the next level
-        depth(child, level + 1) # recall function until you reach the end
-
-if __name__ == '__main__':
-    n = int(input())
-    xml = ""
-    for i in range(n):
-        xml =  xml + input() + "\n"
-    tree = etree.ElementTree(etree.fromstring(xml))
-    depth(tree.getroot(), -1)
-    print(maxdepth)
-
-
+    
+    
 #------------------------------------------------------------------------
 
 # NUMPY
@@ -2115,16 +2099,3 @@ for _ in range(n):
 arr = numpy.array(l, float)
 
 print(round(numpy.linalg.det(arr), 2))
-
-
-
-
-
-
-
-
-        
-        
-
-
-
